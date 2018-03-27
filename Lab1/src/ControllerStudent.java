@@ -26,7 +26,7 @@ public class ControllerStudent {
 	public void showStudents() {
 		List<ModelStudent> students = new ArrayList<ModelStudent>();
 		IStudentDao dao = new ImplStudentDao();
-		students = dao.getStudents();
+		students = dao.getStudent();
 		viewS.viewStudents(students);
 	}
 }

@@ -13,12 +13,13 @@ public class ImplStudentDao implements IStudentDao{
 		Statement stm = null;
 		Connection con = null;
 		
-		String sql="INSERT INTO Lab1 VALUE ('"+student.getCode()+"','"+student.getName()+"','"+student.getAge()+"','"+student.getCareer()+"')";
-		
+		String sql="INSERT INTO Student VALUE ('"+student.getId()+"','"+student.getCode()+"','"+student.getName()+"','"+student.getAge()+"','"+student.getCareer()+"')";
 		try {
 			con = Connect.connect();
 			stm = con.createStatement();
+			System.out.println("ANTES ANTES");
 			stm.execute(sql);
+			System.out.println("DESPUES DESPUES");
 			register = true;
 			stm.close();
 			con.close();
@@ -29,12 +30,12 @@ public class ImplStudentDao implements IStudentDao{
 		return register;
 	}
 	@Override
-	public List<ModelStudent> getStudents(){
+	public List<ModelStudent> getStudent(){
 		Connection con = null;
 		Statement stm = null;
 		ResultSet rs = null;
 		
-		String sql = "SELECCT * FROM Student  ORDER BY age";
+		String sql = "SELECT * FROM Student";
 		
 		List<ModelStudent> listStudent = new ArrayList<ModelStudent>();
 		
@@ -44,10 +45,11 @@ public class ImplStudentDao implements IStudentDao{
 			rs = stm.executeQuery(sql);
 			while(rs.next()) {
 				ModelStudent student = new ModelStudent();
-				student.setCode(rs.getString(1));
-				student.setName(rs.getString(2));
-				student.setAge(rs.getInt(3));
-				student.setCareer(rs.getString(4));
+				student.setId(rs.getString(1));
+				student.setCode(rs.getString(2));
+				student.setName(rs.getString(3));
+				student.setAge(rs.getInt(4));
+				student.setCareer(rs.getString(5));
 				listStudent.add(student);
 			}
 			stm.close();
@@ -65,7 +67,7 @@ public class ImplStudentDao implements IStudentDao{
 		Statement stm = null;
 		
 		boolean update = false;
-		String sql = "UPDATE Student SET code='"+student.getCode()+"', age='"+student.getAge()+"', career='"+student.getCareer()+"'" +" WHERE name="+student.getName();
+		String sql = "UPDATE Student SET code='"+student.getCode()+"', name='"+student.getName()+"', age='"+student.getAge()+"', career='"+student.getCareer()+"'" +" WHERE id="+student.getId();
 		try {
 			con = Connect.connect();
 			stm = con.createStatement();
@@ -83,7 +85,7 @@ public class ImplStudentDao implements IStudentDao{
 		Statement stm = null;
 		
 		boolean delete = false;
-		String sql = "DELETE FROM Student WHERE name="+student.getName();
+		String sql = "DELETE FROM Student WHERE id="+student.getId();
 		try {
 			con = Connect.connect();
 			stm = con.createStatement();

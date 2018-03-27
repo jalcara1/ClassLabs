@@ -1,6 +1,6 @@
-
 public class ModelStudent {
 	
+	private String id;
 	private String code;
 	private String name;
 	private int age;
@@ -9,12 +9,19 @@ public class ModelStudent {
 	public ModelStudent() {
 		// TODO Auto-generated constructor stub
 	}
-	public ModelStudent(String code, String name, int age, String career) {
+	public ModelStudent(String id, String code, String name, int age, String career) {
+		this.id = id;
 		this.code = code;
 		this.name = name;
 		this.age = age;
 		this.career = career;
-	}	
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public String getCode() {
 		return code;
 	}
@@ -41,6 +48,6 @@ public class ModelStudent {
 	}
 	@Override
 	public String toString() {
-		return this.code+", "+this.name+", "+this.age+", "+this.career;
+		return this.id+", "+this.code+", "+this.name+", "+this.age+", "+this.career;
 	}
 }
