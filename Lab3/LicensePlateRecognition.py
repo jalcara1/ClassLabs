@@ -15,10 +15,14 @@ def amazon_aws(image):
     s3.meta.client.upload_file(photo, bucket, photo)
     response=client.detect_text(Image={'S3Object':{'Bucket':bucket,'Name':photo}})
     textDetections=response['TextDetections']
-    print("Image Processed")
+    print("Image Processing")
     for text in textDetections:
-        print ('Detected text:' + text['DetectedText'])
-        print ('Confidence: ' + "{:.2f}".format(text['Confidence']) + "%")
+        cadena = text['DetectedText']
+        patron = re.compile('([A-Z][A-Z][A-Z] [0-9][0-9][0-9])\Z')
+        patron2 = re.compile('([A-Z][A-Z][A-Z]-[0-9][0-9][0-9])\Z')
+        if patron.match(cadena) or patron2.match(cadena):
+            print("La placa que detecto fue: " + cadena)
+    print("Finish Process")
 
 def license_plate_recognition():
     faceCascade = cv2.CascadeClassifier('haarcascade_cars.xml')
@@ -37,7 +41,7 @@ def license_plate_recognition():
             flags=cv2.CASCADE_SCALE_IMAGE
         )
         photo = str(faces)
-        print("---->> " + photo + " ------ " + str(len(photo)))
+        #print("---->> " + photo + " ------ " + str(len(photo)))
         
         if len(photo) > 4:
             picture = "image%04i.jpg" %cpt
@@ -56,7 +60,7 @@ def license_plate_recognition():
         frame_copy = cv2.flip(frame, 1)
         cv2.imshow('Video', frame_copy)
         fps = video_capture.get(cv2.CAP_PROP_FPS)
-        print("Frames per second using video.get(cv2.cv.CV_CAP_PROP_FPS): {0}".format(fps))
+        #print("Frames per second using video.get(cv2.cv.CV_CAP_PROP_FPS): {0}".format(fps))
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
     # When everything is done, release the capture
