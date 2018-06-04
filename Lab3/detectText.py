@@ -1,5 +1,6 @@
 import boto3
 import re
+import json
 
 s3=boto3.resource('s3')
 
@@ -18,16 +19,20 @@ if __name__ == "__main__":
 
                         
     textDetections=response['TextDetections']
-    print (response)
+    #print (response)
     print ('Matching faces')
+    #print (json.dumps(response,indent=4, sort_keys=True))
     for text in textDetections:
             #matcher.group();
-            print ('Detected text:' + text['DetectedText'])
-            print ('Confidence: ' + "{:.2f}".format(text['Confidence']) + "%")
+            #print ('Detected text:' + text['DetectedText'])
+            #print ('Confidence: ' + "{:.2f}".format(text['Confidence']) + "%")
             cadena = text['DetectedText']
-            patron = re.compile('([A-Z])\w') 
-            matcher = patron.search('QGU')
-            print(matcher.group(0))
+            #print(cadena)
+            patron = re.compile('([A-Z][A-Z][A-Z] [0-9][0-9][0-9])\Z')
+            patron2 = re.compile('([A-Z][A-Z][A-Z]-[0-9][0-9][0-9])\Z ')
+            if patron.match(cadena) or patron2.match(cadena):
+                print("La placa que detecto fue: " + cadena)
+            #print(matcher.group(0))
             #print ('Id: {}'.format(text['Id']))
             #if 'ParentId' in text:
                 #print ('Parent Id: {}'.format(text['ParentId']))
