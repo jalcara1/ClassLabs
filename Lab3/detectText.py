@@ -20,7 +20,7 @@ if __name__ == "__main__":
                         
     textDetections=response['TextDetections']
     #print (response)
-    print ('Matching faces')
+    #print ('Matching faces')
     #print (json.dumps(response,indent=4, sort_keys=True))
     for text in textDetections:
             #matcher.group();
@@ -29,7 +29,7 @@ if __name__ == "__main__":
             cadena = text['DetectedText']
             #print(cadena)
             patron = re.compile('([A-Z][A-Z][A-Z] [0-9][0-9][0-9])\Z')
-            patron2 = re.compile('([A-Z][A-Z][A-Z]-[0-9][0-9][0-9])\Z ')
+            patron2 = re.compile('([A-Z][A-Z][A-Z]-[0-9][0-9][0-9])\Z')
             if patron.match(cadena) or patron2.match(cadena):
                 print("La placa que detecto fue: " + cadena)
             #print(matcher.group(0))
