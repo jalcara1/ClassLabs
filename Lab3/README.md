@@ -31,7 +31,7 @@
 
    - [OPENCV](https://opencv.org/): es una biblioteca libre de visión artificial originalmente desarrollada por Intel. 
    
-   - [PYTHON](https://www.python.org/): es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible.[Python](https://www.python.org/)
+   - [PYTHON](https://www.python.org/): es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible.
    
    - [AWS BUCKET](https://docs.aws.amazon.com/es_es/AmazonS3/latest/dev/UsingBucket.html): Amazon S3 es un almacenamiento en la nube para Internet. Para poder cargar sus datos (fotos, vídeos, documentos, etc.) primero ha de crear un bucket en una de las regiones de AWS. Luego puede cargar la cantidad de objetos que desee en el bucket.   
    
