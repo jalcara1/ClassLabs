@@ -66,6 +66,8 @@
     
    - Al indentificar un vehiculo toma la foto del vehiculo
    
+   ![foto vehiculo](prueba2.jpeg)
+   
           if len(photo) > 4:
             picture = "image%04i.jpg" %cpt
             cv2.imwrite(picture, frame)
@@ -76,11 +78,12 @@
             cpt += 1
             print("Image Written!")
             
-            
-            ![Deteccion vehiculo](prueba2.jpeg)
+         
             
             
    - Al tener la foto del vehiculo, se va identificar rectangulos en dicha foto, Se reconocen los rectangulos, se le aplica el text recognition de aws a los rectangulos detectados en la imagen.
+   
+   ![foto vehiculo](prueba1.jpeg)
    
          for (x, y, w, h) in faces:
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
@@ -92,9 +95,11 @@
     video_capture.release()
     cv2.destroyAllWindows() 
     
-     ![foto vehiculo](prueba1.jpeg)
+    
  
    - Con la expresiones regulares ('([A-Z][A-Z][A-Z] [0-9][0-9][0-9])\Z') y ('([A-Z][A-Z][A-Z]-[0-9][0-9][0-9])\Z') se limita al reconocimiento de texto que identifique las placas y por ultimo, se utiliza un metodo que encuentre similitudes con la expresion regular.
+   
+   ![foto vehiculo](prueba3.jpeg)
    
     def amazon_aws(image):
     s3=boto3.resource('s3')
@@ -114,7 +119,7 @@
             print("La placa que detecto fue: " + cadena)
     print("Finish Process") 
     
-    ![foto vehiculo](prueba3.jpeg)
+    
   
    
 ## Referencias
