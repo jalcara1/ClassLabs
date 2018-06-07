@@ -66,7 +66,7 @@
     
    - Al indentificar un vehiculo toma la foto del vehiculo
    
-        ```if len(photo) > 4:
+          if len(photo) > 4:
             picture = "image%04i.jpg" %cpt
             cv2.imwrite(picture, frame)
             
@@ -74,27 +74,29 @@
             thread.start()
             
             cpt += 1
-            print("Image Written!")```
+            print("Image Written!")
+            
+            
+            ![Deteccion vehiculo](prueba2.jpeg)
             
             
    - Al tener la foto del vehiculo, se va identificar rectangulos en dicha foto, Se reconocen los rectangulos, se le aplica el text recognition de aws a los rectangulos detectados en la imagen.
    
-     ```for (x, y, w, h) in faces:
+         for (x, y, w, h) in faces:
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
-        # Display the resulting frame
-        frame_copy = cv2.flip(frame, 1)
-        cv2.imshow('Video', frame_copy)
-        fps = video_capture.get(cv2.CAP_PROP_FPS)
-        #print("Frames per second using video.get(cv2.cv.CV_CAP_PROP_FPS): {0}".format(fps))
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+         frame_copy = cv2.flip(frame, 1)
+         cv2.imshow('Video', frame_copy)
+         fps = video_capture.get(cv2.CAP_PROP_FPS)
+         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
     video_capture.release()
-    cv2.destroyAllWindows() ```
+    cv2.destroyAllWindows() 
     
+     ![foto vehiculo](prueba1.jpeg)
  
    - Con la expresiones regulares ('([A-Z][A-Z][A-Z] [0-9][0-9][0-9])\Z') y ('([A-Z][A-Z][A-Z]-[0-9][0-9][0-9])\Z') se limita al reconocimiento de texto que identifique las placas y por ultimo, se utiliza un metodo que encuentre similitudes con la expresion regular.
    
-    ```def amazon_aws(image):
+    def amazon_aws(image):
     s3=boto3.resource('s3')
     bucket='telematicaequipo3'
     s3=boto3.resource('s3')
@@ -110,8 +112,10 @@
         patron2 = re.compile('([A-Z][A-Z][A-Z]-[0-9][0-9][0-9])\Z')
         if patron.match(cadena) or patron2.match(cadena):
             print("La placa que detecto fue: " + cadena)
-    print("Finish Process") ```
-
+    print("Finish Process") 
+    
+    ![foto vehiculo](prueba3.jpeg)
+  
    
 ## Referencias
 
