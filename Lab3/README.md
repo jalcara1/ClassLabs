@@ -22,9 +22,12 @@
 
 
   ## DESCRIPCION DEL PROYECTO
+  
   El proyecto consiste en identificar placas de vehiculos colombianos en tiempo real.A traves de una camara.
 
   ## TECNOLOGIAS
+  
+  ![opencv](opencvicono.png)![aws](aws.png)![python](pythonicono.png)
 
    - OPENCV: es una biblioteca libre de visión artificial originalmente desarrollada por Intel.   ([https://opencv.org/ )]
    
