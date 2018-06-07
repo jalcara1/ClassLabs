@@ -59,25 +59,26 @@
    
    - Se identifica en la webcam vehiculos que se esten movilizando en tiempo real
    
-    def license_plate_recognition():
-    faceCascade = cv2.CascadeClassifier('haarcascade_cars.xml')
-    video_capture = cv2.VideoCapture(0)
-    cpt = 0
+``` python
+def license_plate_recognition():
+faceCascade = cv2.CascadeClassifier('haarcascade_cars.xml')
+video_capture = cv2.VideoCapture(0)
+cpt = 0
+```
     
    - Al indentificar un vehiculo toma la foto del vehiculo
    
    ![foto vehiculo](prueba2.jpeg)
    
-          if len(photo) > 4:
-            picture = "image%04i.jpg" %cpt
-            cv2.imwrite(picture, frame)
-            
-            thread = multiprocessing.Process(target=amazon_aws, args=(picture,))
-            thread.start()
-            
-            cpt += 1
-            print("Image Written!")
-            
+```python
+if len(photo) > 4:
+ picture = "image%04i.jpg" %cpt
+ cv2.imwrite(picture, frame)
+ thread = multiprocessing.Process(target=amazon_aws, args=(picture,))
+ thread.start()
+ cpt += 1
+ print("Image Written!")
+ ```
          
             
             
@@ -85,7 +86,8 @@
    
    ![foto vehiculo](prueba1.jpeg)
    
-         for (x, y, w, h) in faces:
+```python
+      for (x, y, w, h) in faces:
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
          frame_copy = cv2.flip(frame, 1)
          cv2.imshow('Video', frame_copy)
@@ -94,6 +96,7 @@
             break
     video_capture.release()
     cv2.destroyAllWindows() 
+   ```
     
     
  
@@ -101,6 +104,7 @@
    
    ![foto vehiculo](prueba3.jpeg)
    
+```python
     def amazon_aws(image):
     s3=boto3.resource('s3')
     bucket='telematicaequipo3'
@@ -118,7 +122,7 @@
         if patron.match(cadena) or patron2.match(cadena):
             print("La placa que detecto fue: " + cadena)
     print("Finish Process") 
-    
+  ```
     
   
    
