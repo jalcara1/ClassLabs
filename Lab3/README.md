@@ -73,10 +73,10 @@ cpt = 0
 ```python
 if len(photo) > 4:
  picture = "image%04i.jpg" %cpt
- cv2.imwrite(picture, frame)
- thread = multiprocessing.Process(target=amazon_aws, args=(picture,))
- thread.start()
- cpt += 1
+  cv2.imwrite(picture, frame)
+  thread = multiprocessing.Process(target=amazon_aws, args=(picture,))
+  thread.start()
+  cpt += 1
  print("Image Written!")
  ```
          
