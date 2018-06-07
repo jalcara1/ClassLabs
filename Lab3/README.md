@@ -1,10 +1,24 @@
 # Proyecto Final Tópicos en Ingeniería de Telemática 
    ### Identificacion de placas de vehiculo en tiempo real
   
-  # Integrantes del grupo:
-  * Alejandro Cordoba Bodhert 
-  * Juan Pablo Alcaraz Flórez 
-  * Craig David Cartagena 
+  # INTEGRANTES DEL GRUPO:
+- **JUAN PABLO ALCARAZ FLOREZ**
+- **ALEJANDRO CORDOBA BODHERT**
+- **CRAIG DAVID CARTAGENA CASTANO**
+
+# PROFESOR:
+- **EDWIN NELSON MONTOYA MUNERA**
+
+
+
+**UNIVERSIDAD DE EAFIT**
+
+**INGENIERIA DE SISTEMAS**
+
+**2018**
+
+![Eafit Logo](eafit.png)
+
 
 
   ## DESCRIPCION DEL PROYECTO
@@ -12,13 +26,13 @@
 
   ## TECNOLOGIAS
 
-   - OPENCV: es una biblioteca libre de visión artificial originalmente desarrollada por Intel.  https://opencv.org/ 
+   - OPENCV: es una biblioteca libre de visión artificial originalmente desarrollada por Intel.   ([https://opencv.org/ )]
    
-   - PYTHON: es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible.  https://www.python.org/ 
+   - PYTHON: es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible.  ([https://www.python.org/])
    
-   - AWS BUCKET: Amazon S3 es un almacenamiento en la nube para Internet. Para poder cargar sus datos (fotos, vídeos, documentos, etc.) primero ha de crear un bucket en una de las regiones de AWS. Luego puede cargar la cantidad de objetos que desee en el bucket.  https://docs.aws.amazon.com/es_es/AmazonS3/latest/dev/UsingBucket.html  
+   - AWS BUCKET: Amazon S3 es un almacenamiento en la nube para Internet. Para poder cargar sus datos (fotos, vídeos, documentos, etc.) primero ha de crear un bucket en una de las regiones de AWS. Luego puede cargar la cantidad de objetos que desee en el bucket.   ([https://docs.aws.amazon.com/es_es/AmazonS3/latest/dev/UsingBucket.html)]
    
-   - AWS TEXT RECOGNITION: Amazon Rekognition Text in Image puede detectar texto en imágenes y convertirlo en texto legible por máquina. https://docs.aws.amazon.com/rekognition/latest/dg/text-detection.html 
+   - AWS TEXT RECOGNITION: Amazon Rekognition Text in Image puede detectar texto en imágenes y convertirlo en texto legible por máquina.  ([https://docs.aws.amazon.com/rekognition/latest/dg/text-detection.html)]
    
    ## EJECUCION
    
