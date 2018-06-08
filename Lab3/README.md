@@ -68,7 +68,7 @@ cpt = 0
     
    - Al indentificar un vehiculo toma la foto del vehiculo
    
-   ![foto vehiculo](prueba2.jpeg)
+   ![json](json1.png)
    
 ```python
 if len(photo) > 4:
@@ -129,3 +129,5 @@ if len(photo) > 4:
 ## Referencias
 
 https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_gui/py_video_display/py_video_display.html
+
+https://pythonprogramming.net/haar-cascade-object-detection-python-opencv-tutorial/
