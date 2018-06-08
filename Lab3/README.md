@@ -68,7 +68,9 @@ cpt = 0
     
    - Al indentificar un vehiculo toma la foto del vehiculo
    
-   ![json](json1.png)
+  ![foto vehiculo](prueba1.jpeg)
+   
+
    
 ```python
 if len(photo) > 4:
@@ -84,7 +86,7 @@ if len(photo) > 4:
             
    - Al tener la foto del vehiculo, se va identificar rectangulos en dicha foto, Se reconocen los rectangulos, se le aplica el text recognition de aws a los rectangulos detectados en la imagen.
    
-   ![foto vehiculo](prueba1.jpeg)
+   ![json](json1.png)
    
 ```python
       for (x, y, w, h) in faces:
